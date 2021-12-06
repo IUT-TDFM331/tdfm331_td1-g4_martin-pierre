@@ -6,6 +6,7 @@ import org.hamcrest.collection.IsIterableContainingInAnyOrder;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.util.Arrays;
 import java.util.List;
@@ -93,4 +94,29 @@ public class ListApiServiceTest {
 
         Assert.assertFalse(service.getListMeetings().contains(meeting));
     }
+
+    /**
+     * Test if a meeting exists with his objects name
+     */
+    @Test
+    public void findByObjectTest(){
+        // Etant donné
+//        Meeting meeting = service.getListMeetings().get(0);
+        String om1 = "Kick-off meeting";
+
+        try {
+            // Si
+            Meeting found = service.findByObject(om1);
+            // Alors
+            Assertions.assertEquals(om1, found.getObjectMeeting());
+        } catch (MeetingNotFound meetingNotFound) {
+            meetingNotFound.printStackTrace();
+            Assertions.fail("La réunion devrait exister");
+        }
+    }
+
+
+
+
+
 }
