@@ -46,6 +46,8 @@ codes couvert/non couverts par les tests.
 
 ## Contributors 
 ```java
-//TODO
+- Martin Baras
+- Pierre Modot 
+- Ali Abou Daher
 ```
 
