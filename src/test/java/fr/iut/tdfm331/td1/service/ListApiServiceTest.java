@@ -93,4 +93,16 @@ public class ListApiServiceTest {
 
         Assert.assertFalse(service.getListMeetings().contains(meeting));
     }
+
+    @Test
+    public void findByObjectTest(){
+        String om1 ="Kick-off meeting";
+        try {
+            Meeting found = service.findByObject(om1);
+        }catch(MeetingNotFound mnf){
+            mnf.printStackTrace();
+            Assert.fail("Le service devrait exister");
+        }
+        }
+
 }
